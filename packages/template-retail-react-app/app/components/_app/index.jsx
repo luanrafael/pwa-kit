@@ -72,6 +72,7 @@ import {
 } from '@salesforce/retail-react-app/app/constants'
 
 import Seo from '@salesforce/retail-react-app/app/components/seo'
+import { Helmet } from 'react-helmet'
 
 const onClient = typeof window !== 'undefined'
 
@@ -246,6 +247,15 @@ const App = (props) => {
 
     return (
         <Box className="sf-app" {...styles.container}>
+            <Helmet>
+                <script
+                    // Staging - bundle/### changes every deployment!
+                    // src="https://runtime-admin-preview.mobify-storefront.com/mobify/bundle/313/static/storefront-preview.js"
+                    // Local development
+                    src="http://localhost:3000/mobify/bundle/development/static/storefront-preview.js"
+                    type="text/javascript"
+                />
+            </Helmet>
             <IntlProvider
                 onError={(err) => {
                     if (!messages) {

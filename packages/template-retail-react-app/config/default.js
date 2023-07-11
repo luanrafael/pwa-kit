@@ -60,5 +60,8 @@ module.exports = {
                 path: 'ocapi'
             }
         ]
+    },
+    storefrontPreview: {
+        hooksSrc: '/mobify/bundle/development/static/test.js'
     }
 }
